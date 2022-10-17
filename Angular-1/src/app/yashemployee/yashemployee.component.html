@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Employee Form</h1>
+    <form class="form-group" [formGroup]="employeeForm">
+        <label>FirstName</label>
+        <input formControlName="employeeFirstName" class="form-control" /><br />
+        <label>LastName</label>
+        <input formControlName="employeeLastName" class="form-control" /><br />
+        <div formGroupName="address">
+            <label>City</label>
+            <input formControlName="city" class="form-control" />
+            <label>State</label>
+            <input formControlName="state" class="form-control" />
+        </div>
+        <button (click)="addHobby()" class="btn btn-primary">Add Hobby</button>
+        <!-- <div formArrayName="hobbies"> -->
+        <div formArrayName = "hobbies" *ngFor="
+            let hobbyGroup of employeeForm.controls.hobbies?.value;
+            let i = index
+            ">
+            <div [formGroupName]="i">
+                <input formControlName="hobbyName" class="form-Control" />
+            </div>
+        </div>
+
+
+        <button class="btn btn-primary" [disabled]="!employeeForm.valid" (click)="submitEmployee()">Submit</button>
+
+
+    </form>
+</div>
