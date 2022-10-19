@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { YashloginComponent } from './components/yashlogin/yashlogin.component';
 import { YashforgotPasswordComponent } from './components/yashforgot-password/yashforgot-password.component';
 import { YashnotFoundComponent } from './components/yashnot-found/yashnot-found.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { YashnotFoundComponent } from './components/yashnot-found/yashnot-found.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
